@@ -1,0 +1,33 @@
+{
+  "name": "schedule-core",
+  "version": "0.1.0",
+  "description": "Persistent cross-restart scheduler core: SQLite archive + lease-claim dispatch protocol + full clock discipline (RFC3339 / IANA / DST round-trip detection). Zero framework dependencies - every claim carries an experiment number.",
+  "type": "module",
+  "main": "src/ScheduleRegistry.ts",
+  "files": [
+    "src/",
+    "test/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types test/schedule-unit.test.ts && node --experimental-strip-types test/schedule-fuzz.test.ts && node --experimental-strip-types test/schedule-diff.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "scheduler",
+    "sqlite",
+    "at-least-once",
+    "lease",
+    "cross-restart",
+    "dsh"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.6"
+  }
+}
